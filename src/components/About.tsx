@@ -9,7 +9,7 @@ export default function About() {
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start gap-12">
         {/* Avatar a la izquierda */}
         <motion.img
-          src="/perfil.jpg" // asegúrate de tener esta img en public
+          src="../assets/projects/perfil-celest.png" // asegúrate de tener esta img en public
           alt="Foto de perfil"
           className="w-40 h-40 rounded-full shadow-lg ring-4 ring-cyan-400/50"
           initial={{ opacity: 0, x: -50 }}
@@ -44,7 +44,7 @@ export default function About() {
           >
             Soy desarrollador web especializado en{" "}
             <span className="font-semibold text-cyan-400">
-              React, React Native y Tailwind
+              React y React Native 
             </span>
             . Me apasiona crear interfaces limpias, rápidas y modernas. Disfruto
             trabajando con proyectos que combinan diseño y funcionalidad, y
@@ -67,7 +67,7 @@ export default function About() {
               Ver CV
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mat%C3%ADas-biasioli/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition"

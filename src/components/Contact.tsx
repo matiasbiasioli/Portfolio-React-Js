@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MessageSquare, Check } from "lucide-react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -14,26 +17,41 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí podrías integrar EmailJS o backend
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
+    setStatus("sending");
+
+    emailjs
+      .send(
+        "service_imah9w9", // Reemplaza con tu Service ID
+        "TU_TEMPLATE_ID", // Reemplaza con tu Template ID
+        form,
+        "TU_USER_ID" // Reemplaza con tu User ID
+      )
+      .then(
+        () => {
+          setStatus("success");
+          setForm({ name: "", email: "", message: "" });
+          setTimeout(() => setStatus("idle"), 4000); // Mensaje desaparece después de 4s
+        },
+        (err) => {
+          setStatus("error");
+          console.error("Error al enviar el mensaje:", err);
+          setTimeout(() => setStatus("idle"), 4000);
+        }
+      );
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20"
-    >
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="contact" className="py-20">
+      <div className="max-w-4xl mx-auto px-6 relative">
         {/* Título */}
         <motion.h2
-          className="text-3xl font-bold text-center mb-10"
+          className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Contáctame
+          Contactame
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -47,11 +65,11 @@ export default function Contact() {
           >
             <div className="flex items-center gap-4">
               <Mail size={24} />
-              <span>miemail@correo.com</span>
+              <span>matiasbiasioli@gmail.com</span>
             </div>
             <div className="flex items-center gap-4">
               <Phone size={24} />
-              <span>+54 11 1234-5678</span>
+              <span>+54 9 11 5701-1071</span>
             </div>
             <div className="flex items-center gap-4">
               <MessageSquare size={24} />
@@ -62,7 +80,7 @@ export default function Contact() {
           {/* Formulario */}
           <motion.form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 bg-white text-gray-900 p-6 rounded-xl shadow-lg"
+            className="flex flex-col gap-4 bg-white text-gray-900 p-6 rounded-xl shadow-lg relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -95,21 +113,49 @@ export default function Contact() {
               rows={5}
               className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
+
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+              disabled={status === "sending"}
+              className={`px-6 py-2 rounded-lg text-white transition ${
+                status === "sending"
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
             >
-              Enviar
+              {status === "sending" ? "Enviando..." : "Enviar"}
             </button>
-            {submitted && (
-              <p className="text-green-600 mt-2">¡Mensaje enviado!</p>
-            )}
+
+            {/* Mensajes de estado */}
+            <AnimatePresence>
+              {status === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.8 }}
+                  className="absolute top-[-60px] right-1/2 translate-x-1/2 flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full shadow-md"
+                >
+                  <Check size={20} />
+                  <span>¡Mensaje enviado!</span>
+                </motion.div>
+              )}
+              {status === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.8 }}
+                  className="absolute top-[-60px] right-1/2 translate-x-1/2 flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full shadow-md"
+                >
+                  <span>Error al enviar. Intenta de nuevo.</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.form>
         </div>
 
-        {/* Botón flotante de WhatsApp */}
+        {/* WhatsApp */}
         <a
-          href="https://wa.me/5491123456789"
+          href="https://wa.me/5491157011071"
           target="_blank"
           className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 hover:shadow-2xl transition-all flex items-center justify-center animate-pulse"
         >

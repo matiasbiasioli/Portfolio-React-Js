@@ -34,12 +34,9 @@ const tecnologias = [
 
 export default function Tecnologias() {
   return (
-    <section
-      id="technologies"
-      className="py-16"
-    >
+    <section id="technologies" className="py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-blue-400 mb-12 drop-shadow-lg">
+        <h2 className="text-3xl font-bold mb-12 drop-shadow-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent">
           Tecnologías que utilizo
         </h2>
 

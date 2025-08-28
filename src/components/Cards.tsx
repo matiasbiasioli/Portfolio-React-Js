@@ -2,6 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import WineryWeb from "../assets/projects/winery.vercel.png";
+import IceTransWeb from "../assets/projects/icetrans.png";
+import MagicBoxWeb from "../assets/projects/magicbox.png";
+import PortfolioWeb from "../assets/projects/portafolio-martinez.png";
 
 type Project = {
   id: number;
@@ -40,10 +43,30 @@ const projects: Project[] = [
     title: "E-commerce",
     category: "WordPress",
     description: "Tienda online con WooCommerce personalizada.",
-    image: "/projects/wp-store.png",
+    image: MagicBoxWeb,
     technologies: ["WordPress", "WooCommerce", "Elementor"],
     github: "https://github.com/tuusuario/wp-store",
-    demo: "https://tiendavirtual.com",
+    demo: "https://magicbox.com.ar",
+  },
+  {
+    id: 4,
+    title: "Portafolio",
+    category: "WordPress",
+    description: "Portafolio Cinematográfico",
+    image: PortfolioWeb,
+    technologies: ["WordPress", "WP Bakery"],
+    github: "https://github.com/tuusuario/wp-store",
+    demo: "https://matiasmartinez.com.ar",
+  },
+  {
+    id: 5,
+    title: "Transportes Refigerados",
+    category: "WordPress",
+    description: "Sitio Web Empresa",
+    image: IceTransWeb,
+    technologies: ["WordPress", "Elementor"],
+    github: "https://github.com/tuusuario/wp-store",
+    demo: "https://icetrans.com.ar",
   },
 ];
 
@@ -60,7 +83,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-10 text-blue-400 drop-shadow-lg">
+        <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
           Mis Proyectos
         </h2>
 
