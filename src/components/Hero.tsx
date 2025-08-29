@@ -41,7 +41,7 @@ const Hero = () => {
         className="flex gap-4"
       >
         <a
-          href="#projects"
+          href="#portfolio"
           className="px-6 py-3 rounded-xl bg-cyan-500 text-white font-semibold shadow-lg hover:scale-105 hover:bg-cyan-400 transition-all duration-300"
         >
           Ver Proyectos

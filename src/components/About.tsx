@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
+import profileImg from "../assets/projects/perfil-celest.png";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="py-20 text-white"
-    >
+    <section id="about" className="py-20 text-white">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start gap-12">
         {/* Avatar a la izquierda */}
         <motion.img
-          src="../assets/projects/perfil-celest.png" // asegúrate de tener esta img en public
+          src={profileImg}
           alt="Foto de perfil"
           className="w-40 h-40 rounded-full shadow-lg ring-4 ring-cyan-400/50"
           initial={{ opacity: 0, x: -50 }}
@@ -44,11 +42,9 @@ export default function About() {
           >
             Soy desarrollador web especializado en{" "}
             <span className="font-semibold text-cyan-400">
-              React y React Native 
+              React y React Native
             </span>
-            . Me apasiona crear interfaces limpias, rápidas y modernas. Disfruto
-            trabajando con proyectos que combinan diseño y funcionalidad, y
-            siempre busco aprender algo nuevo en cada desafío 🚀.
+            . disfruto crear soluciones prácticas y atractivas. Vengo del mundo de X y me enfoqué en tecnología porque Y.🚀.
           </motion.p>
 
           {/* Botones */}
