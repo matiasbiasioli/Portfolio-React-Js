@@ -6,8 +6,6 @@ const Hero = () => {
       id="hero"
       className="h-screen flex flex-col justify-center items-center relative overflow-hidden"
     >
-      
-
       {/* Título */}
       <motion.h1
         initial={{ opacity: 0, y: -60 }}
@@ -28,9 +26,10 @@ const Hero = () => {
         transition={{ delay: 0.5 }}
         className="text-lg md:text-2xl max-w-xl text-center text-gray-300 mb-10"
       >
-        Desarrollador Web especializado en{" "}
-        <span className="font-semibold text-cyan-300">React</span>, creando
-        experiencias modernas y funcionales 🚀
+        Desarrollador Frontend especializado en{" "}
+        <span className="font-semibold text-cyan-300">React</span> y{" "}
+        <span className="font-semibold text-cyan-300">React Native</span>,
+        creando aplicaciones web y móviles intuitivas y funcionales 🚀
       </motion.p>
 
       {/* CTA */}

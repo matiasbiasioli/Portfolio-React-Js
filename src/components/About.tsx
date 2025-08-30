@@ -26,7 +26,7 @@ export default function About() {
           }}
         >
           <motion.h2
-            className="text-3xl font-bold text-cyan-400"
+            className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -44,7 +44,8 @@ export default function About() {
             <span className="font-semibold text-cyan-400">
               React y React Native
             </span>
-            . disfruto crear soluciones prácticas y atractivas. Vengo del mundo de X y me enfoqué en tecnología porque Y.🚀.
+            . disfruto crear soluciones prácticas y atractivas. Vengo del mundo
+            de X y me enfoqué en tecnología porque Y.🚀.
           </motion.p>
 
           {/* Botones */}

@@ -62,20 +62,22 @@ export default function Tecnologias() {
         </h2>
 
         {/* Filtros */}
-        <div className="flex justify-center gap-4 mb-12">
-          {["All", "Frontend", "Backend", "Mobile", "Design"].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelected(cat as any)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
-                selected === cat
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50"
-                  : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {["All", "Frontend", "Backend", "Mobile", "Design", "Tools"].map(
+            (cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelected(cat as any)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
+                  selected === cat
+                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50"
+                    : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            )
+          )}
         </div>
 
         {/* Grid de Tecnologías */}

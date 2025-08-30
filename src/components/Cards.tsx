@@ -30,16 +30,6 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "App de Música",
-    category: "React Native",
-    description: "Aplicación móvil de música hecha en React Native.",
-    image: "/projects/rn-music.png",
-    technologies: ["React Native", "Expo", "Firebase"],
-    github: "https://github.com/tuusuario/music-app",
-    demo: "https://expo.dev/tuapp",
-  },
-  {
-    id: 3,
     title: "E-commerce",
     category: "WordPress",
     description: "Tienda online con WooCommerce personalizada.",
@@ -49,7 +39,7 @@ const projects: Project[] = [
     demo: "https://magicbox.com.ar",
   },
   {
-    id: 4,
+    id: 3,
     title: "Portafolio",
     category: "WordPress",
     description: "Portafolio Cinematográfico",
@@ -59,7 +49,7 @@ const projects: Project[] = [
     demo: "https://matiasmartinez.com.ar",
   },
   {
-    id: 5,
+    id: 4,
     title: "Transportes Refigerados",
     category: "WordPress",
     description: "Sitio Web Empresa",
@@ -93,7 +83,7 @@ export default function Portfolio() {
             <button
               key={cat}
               onClick={() => setSelected(cat as any)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
                 selected === cat
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50"
                   : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
