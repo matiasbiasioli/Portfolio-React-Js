@@ -40,12 +40,20 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Soy desarrollador web especializado en{" "}
+            Me especializo en construir aplicaciones web modernas y responsive
+            usando <span className="font-semibold text-cyan-400">React</span>.
+            <br />
+            Me enfoco en crear aplicaciones de una sola página (SPA) dinámicas y
+            escalables con código limpio y organizado. Actualmente estoy
+            profundizando mis conocimientos en{" "}
             <span className="font-semibold text-cyan-400">
-              React y React Native
-            </span>
-            . disfruto crear soluciones prácticas y atractivas. Vengo del mundo
-            de X y me enfoqué en tecnología porque Y.🚀.
+              React Native
+            </span>{" "}
+            para el desarrollo de aplicaciones móviles multiplataforma. Mi
+            experiencia también incluye el diseño y mantenimiento de tiendas
+            digitales en WordPress con Elementor y WooCommerce. Soy una persona
+            organizada y detallista, y me comprometo a entregar trabajos en
+            tiempos pactados.
           </motion.p>
 
           {/* Botones */}
