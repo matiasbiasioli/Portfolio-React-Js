@@ -4,7 +4,7 @@ import profileImg from "../assets/projects/perfil-celest.png";
 export default function About() {
   return (
     <section id="about" className="py-20 text-white">
-      <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start gap-12">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-gray-800 px-20 py-20 rounded-lg">
         {/* Avatar a la izquierda */}
         <motion.img
           src={profileImg}
@@ -26,7 +26,7 @@ export default function About() {
           }}
         >
           <motion.h2
-            className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg"
+            className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

@@ -73,7 +73,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
+        <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
           Mis Proyectos
         </h2>
 
@@ -164,3 +164,5 @@ export default function Portfolio() {
     </section>
   );
 }
+
+

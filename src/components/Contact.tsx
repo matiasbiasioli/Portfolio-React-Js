@@ -45,7 +45,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-6 relative">
         {/* Título */}
         <motion.h2
-          className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent"
+          className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -63,15 +63,15 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 border border-gray-500 rounded-md p-3">
               <Mail size={24} />
               <span>matiasbiasioli@gmail.com</span>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 border border-gray-500 rounded-md p-3">
               <Phone size={24} />
               <span>+54 9 11 5701-1071</span>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 border border-gray-500 rounded-md p-3">
               <MessageSquare size={24} />
               <span>Siempre abierto a nuevos proyectos 🚀</span>
             </div>
@@ -80,7 +80,7 @@ export default function Contact() {
           {/* Formulario */}
           <motion.form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 bg-white text-gray-900 p-6 rounded-xl shadow-lg relative"
+            className="flex flex-col gap-4 bg-gray-800 text-white p-6 rounded-xl shadow-lg relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -93,7 +93,7 @@ export default function Contact() {
               value={form.name}
               onChange={handleChange}
               required
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="email"
@@ -102,7 +102,7 @@ export default function Contact() {
               value={form.email}
               onChange={handleChange}
               required
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <textarea
               name="message"
@@ -111,7 +111,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               rows={5}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
 
             <button
@@ -120,7 +120,7 @@ export default function Contact() {
               className={`px-6 py-2 rounded-lg text-white transition ${
                 status === "sending"
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
+                  : "cursor-pointer bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 hover:bg-blue-700"
               }`}
             >
               {status === "sending" ? "Enviando..." : "Enviar"}
