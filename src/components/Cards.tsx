@@ -6,7 +6,7 @@ import IceTransWeb from "../assets/projects/icetrans.png";
 import MagicBoxWeb from "../assets/projects/magicbox.png";
 import PortfolioWeb from "../assets/projects/portafolio-martinez.png";
 import MovieApp from "../assets/projects/movie-app.png";
-import SaviaDigital from "../assets/projects/movie-app.png";
+import SaviaDigital from "../assets/projects/saviadigital.png";
 
 type Project = {
   id: number;
