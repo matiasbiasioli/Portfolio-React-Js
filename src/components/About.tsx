@@ -4,7 +4,7 @@ import profileImg from "../assets/projects/perfil-celest.png";
 export default function About() {
   return (
     <section id="about" className="py-20 text-white">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-gray-800 px-20 py-20 rounded-lg">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-gray-800 border-1 border-cyan-200 px-20 py-20 rounded-lg">
         {/* Avatar a la izquierda */}
         <motion.img
           src={profileImg}

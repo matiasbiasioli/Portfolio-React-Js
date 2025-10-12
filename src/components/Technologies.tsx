@@ -83,7 +83,7 @@ export default function Tecnologias() {
         {/* Grid de Tecnologías */}
         <motion.div
           layout
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center bg-gray-800 rounded-2xl p-10"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center bg-gray-800 rounded-2xl p-10 border border-cyan-200"
         >
           <AnimatePresence>
             {filtered.map((tech) => (

@@ -5,6 +5,7 @@ import WineryWeb from "../assets/projects/winery.vercel.png";
 import IceTransWeb from "../assets/projects/icetrans.png";
 import MagicBoxWeb from "../assets/projects/magicbox.png";
 import PortfolioWeb from "../assets/projects/portafolio-martinez.png";
+import MovieApp from "../assets/projects/movie-app.png";
 
 type Project = {
   id: number;
@@ -57,6 +58,26 @@ const projects: Project[] = [
     technologies: ["WordPress", "Elementor"],
     github: "https://github.com/tuusuario/wp-store",
     demo: "https://icetrans.com.ar",
+  },
+  {
+    id: 5,
+    title: "Movie Library App",
+    category: "React",
+    description: "Movie APP",
+    image: MovieApp,
+    technologies: ["React", "Typescript", "Vite"],
+    github: "https://github.com/matiasbiasioli/Movie-App-Vite-2025",
+    demo: "https://movie-library-app-eight.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "Savia Digital",
+    category: "WordPress",
+    description: "Savia Digital",
+    image: "",
+    technologies: ["WordPress", "Elementor"],
+    github: "",
+    demo: "",
   },
 ];
 
