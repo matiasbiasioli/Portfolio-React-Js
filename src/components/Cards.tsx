@@ -14,7 +14,7 @@ import Bonsai from "../assets/projects/bonsai.vercel.png";
 type Project = {
   id: number;
   title: string;
-  category: "JavasCript" | "React" | "React Native" | "WordPress";
+  category: "JavaScript" | "React" | "React Native" | "WordPress";
   description: string;
   image: string;
   technologies: string[];
@@ -86,7 +86,7 @@ const projects: Project[] = [
   {
     id: 7,
     title: "Bonsai & Kokedama's Love",
-    category: "JavasCript",
+    category: "JavaScript",
     description: "Proyecto Final de la formación en desarrollo web en CoderHouse",
     image: Bonsai,
     technologies: ["html5", "Css3", "Bootstrap"],
@@ -96,7 +96,7 @@ const projects: Project[] = [
   {
     id: 8,
     title: "Asiatic Food",
-    category: "JavasCript",
+    category: "JavaScript",
     description: "Proyecto Final de la formación en JavaScript en CoderHouse",
     image: AsiaticFood,
     technologies: ["html5", "Css3", "Javascript"],
