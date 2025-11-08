@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import profileImg from "../assets/projects/perfil-celest.png";
+// import profileImg from "../assets/projects/perfil-celest.png";
+import profileImg2 from "../assets/projects/cv-b y n.jpg";
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       <div id="container" className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-amber-200 dark:bg-gray-800 border-1 border-cyan-200 px-20 py-20 rounded-lg">
         {/* Avatar a la izquierda */}
         <motion.img
-          src={profileImg}
+          src={profileImg2}
           alt="Foto de perfil"
           className="w-40 h-40 rounded-full shadow-lg ring-4 ring-cyan-400/50"
           initial={{ opacity: 0, x: -50 }}
