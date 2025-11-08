@@ -134,7 +134,7 @@ export default function Portfolio() {
 
         {/* Filtros */}
         <div className="flex justify-center gap-4 mb-12">
-          {["All", "React", "React Native", "WordPress"].map((cat) => (
+          {["All", "JavaScript", "React", "React Native", "WordPress"].map((cat) => (
             <button
               key={cat}
               onClick={() => setSelected(cat as any)}
