@@ -7,11 +7,14 @@ import MagicBoxWeb from "../assets/projects/magicbox.png";
 import PortfolioWeb from "../assets/projects/portafolio-martinez.png";
 import MovieApp from "../assets/projects/movie-app.png";
 import SaviaDigital from "../assets/projects/saviadigital.png";
+import AsiaticFood from "../assets/projects/asiatic.vercel.jpg";
+import ComponentsApp from "../assets/projects/components-app-portrait.png";
+import Bonsai from "../assets/projects/bonsai.vercel.png";
 
 type Project = {
   id: number;
   title: string;
-  category: "React" | "React Native" | "WordPress";
+  category: "JavasCript" | "React" | "React Native" | "WordPress";
   description: string;
   image: string;
   technologies: string[];
@@ -74,11 +77,41 @@ const projects: Project[] = [
     id: 6,
     title: "Savia Digital",
     category: "WordPress",
-    description: "Savia Digital",
+    description: "Estudio de desarrollo web y aplicaciones móviles",
     image: SaviaDigital,
     technologies: ["WordPress", "Elementor"],
     github: "",
     demo: "https://saviadigital.com.ar/",
+  },
+  {
+    id: 7,
+    title: "Bonsai & Kokedama's Love",
+    category: "JavasCript",
+    description: "Proyecto Final de la formación en desarrollo web en CoderHouse",
+    image: Bonsai,
+    technologies: ["html5", "Css3", "Bootstrap"],
+    github: "https://github.com/matiasbiasioli/Bonsai-Kokedama-s-Love",
+    demo: "https://bonsai-kokedama-s-love.vercel.app/",
+  },
+  {
+    id: 8,
+    title: "Asiatic Food",
+    category: "JavasCript",
+    description: "Proyecto Final de la formación en JavaScript en CoderHouse",
+    image: AsiaticFood,
+    technologies: ["html5", "Css3", "Javascript"],
+    github: "",
+    demo: "https://asiatic-food.vercel.app/",
+  },
+  {
+    id: 9,
+    title: "Components Expo App",
+    category: "React Native",
+    description: "Aplicación que explora los componentes de Expo para el desarrollo mobile",
+    image: ComponentsApp,
+    technologies: ["React Native", "Expo"],
+    github: "",
+    demo: "",
   },
 ];
 
@@ -186,5 +219,3 @@ export default function Portfolio() {
     </section>
   );
 }
-
-

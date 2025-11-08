@@ -4,9 +4,32 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
+  color: black;
+  background: linear-gradient(to bottom, #f8fafc, #e2e8f0); /* fondo claro */
+  font-family: "Lato", sans-serif;
+}
+
+.light nav {
+  background-color: white;
+}
+.light a {
+  color:#0f172a; 
+}
+.light a:hover {
+  color: cyan 
+}
+.light p {
+  color:#0f172a 
+}
+.light #container {
+  background-color: #979ea9;
+}
+
+/* Estilo cuando está activa la clase 'dark' en <html> */
+.dark body {
   color: white;
   background: linear-gradient(to bottom, #0f172a, #1e293b);
-  background-attachment: fixed; /* efecto que no se corte al hacer scroll */
-  font-family: 'Lato', sans-serif;
+  background-attachment: fixed;
 }

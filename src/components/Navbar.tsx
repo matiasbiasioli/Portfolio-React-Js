@@ -1,94 +1,3 @@
-// import { useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import { Menu, X } from "lucide-react";
-
-// export default function Navbar() {
-//   const [open, setOpen] = useState(false);
-
-//   const handleClick = (
-//     e: React.MouseEvent<HTMLAnchorElement>,
-//     href: string
-//   ) => {
-//     e.preventDefault(); // Previene la navegación inmediata del enlace
-//     setOpen(false); // Inicia la animación de salida
-//     // Retrasa la navegación hasta que la animación haya terminado (0.3s)
-//     setTimeout(() => {
-//       window.location.href = href;
-//     }, 300); // El tiempo debe coincidir con la duración de la transición
-//   };
-
-//   return (
-//     <nav className="fixed w-full z-50 bg-[#0f172a]/70 backdrop-blur-md border-b border-white/10">
-//       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center h-16">
-//         {/* Logo */}
-//         <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-//           Frontend Dev
-//         </div>
-
-//         {/* Links desktop */}
-//         <div className="hidden md:flex space-x-8">
-//           {[
-//             { href: "#hero", label: "Home" },
-//             { href: "#about", label: "About me" },
-//             { href: "#technologies", label: "Technologies" },
-//             { href: "#portfolio", label: "Portfolio" },
-//             { href: "#contact", label: "Contact" },
-//           ].map((link) => (
-//             <a
-//               key={link.href}
-//               href={link.href}
-//               className="relative text-gray-200 hover:text-cyan-400 transition"
-//             >
-//               {link.label}
-//               {/* Glow underline effect */}
-//               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-//             </a>
-//           ))}
-//         </div>
-
-//         {/* Botón hamburguesa mobile */}
-//         <div className="md:hidden">
-//           <button onClick={() => setOpen(!open)} className="text-gray-200">
-//             {open ? <X size={24} /> : <Menu size={24} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Menu mobile animado */}
-//       <AnimatePresence>
-//         {open && (
-//           <motion.div
-//             className="md:hidden bg-[#0f172a]/95 backdrop-blur-md border-b border-white/10 z-[100]"
-//             initial={{ opacity: 0, height: 0 }}
-//             animate={{ opacity: 1, height: "auto" }}
-//             exit={{ opacity: 0, height: 0 }}
-//             transition={{ duration: 0.3 }}
-//           >
-//             <div className="flex flex-col space-y-4 px-6 py-6">
-//               {[
-//                 { href: "#hero", label: "Home" },
-//                 { href: "#about", label: "About me" },
-//                 { href: "#technologies", label: "Technologies" },
-//                 { href: "#portfolio", label: "Portfolio" },
-//                 { href: "#contact", label: "Contact" },
-//               ].map((link) => (
-//                 <a
-//                   key={link.href}
-//                   href={link.href}
-//                   onClick={(e) => handleClick(e, link.href)} // Usamos la nueva función
-//                   className="text-gray-200 hover:text-cyan-400 transition"
-//                 >
-//                   {link.label}
-//                 </a>
-//               ))}
-//             </div>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </nav>
-//   );
-// }
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
@@ -110,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-[#0f172a]/70 backdrop-blur-md border-b border-white/10">
+    <nav className="bg-[#fff] dark:bg-[#0f172a] fixed w-full z-50 border-b border-gray-200 dark:border-white/10 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center h-16">
         {/* Logo */}
         <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -129,7 +38,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="relative text-gray-200 hover:text-cyan-400 transition"
+              className="relative text-gray-800 dark:text-gray-200 hover:text-cyan-400"
             >
               {link.label}
             </a>
@@ -138,12 +47,12 @@ export default function Navbar() {
           {/* Botón de toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full border border-gray-500/30 hover:scale-105 transition"
+            className="p-2 rounded-full border border-gray-500 hover:scale-105 transition cursor-pointer"
           >
-            {theme === "light" ? (
-              <Moon className="w-5 h-5 text-white-800" />
-            ) : (
+            {theme === "dark" ? (
               <Sun className="w-5 h-5 text-yellow-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-gray-500" />
             )}
           </button>
         </div>
@@ -155,7 +64,7 @@ export default function Navbar() {
             className="p-2 rounded-full border border-gray-500/30"
           >
             {theme === "light" ? (
-              <Moon className="w-5 h-5 text-gray-200" />
+              <Moon className="w-5 h-5 text-gray-800" />
             ) : (
               <Sun className="w-5 h-5 text-yellow-400" />
             )}
@@ -170,7 +79,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="md:hidden bg-[#0f172a]/95 backdrop-blur-md border-b border-white/10 z-[100]"
+            className="bg-white dark:bg-[#0f172a]/0 fixed w-full z-50 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-colors duration-500"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -188,7 +97,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
-                  className="text-gray-200 hover:text-cyan-400 transition"
+                  className="relative text-gray-800 dark:text-gray-200 hover:text-cyan-500 transition"
                 >
                   {link.label}
                 </a>

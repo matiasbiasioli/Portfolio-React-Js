@@ -90,6 +90,7 @@ export default function Contact() {
           {/* Formulario */}
           <motion.form
             onSubmit={handleSubmit}
+            id="container"
             className="flex flex-col gap-4 bg-gray-800 text-white p-6 rounded-xl shadow-lg relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
