@@ -117,7 +117,7 @@ const projects: Project[] = [
 
 export default function Portfolio() {
   const [selected, setSelected] = useState<
-    "All" | "React" | "React Native" | "WordPress"
+    "All" | "JavaScript" | "React" | "React Native" | "WordPress"
   >("All");
 
   const filtered =
@@ -129,7 +129,7 @@ export default function Portfolio() {
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
-          Mis Proyectos
+          Algunos Proyectos
         </h2>
 
         {/* Filtros */}
