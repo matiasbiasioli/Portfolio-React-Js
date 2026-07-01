@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 import WineryWeb from "../assets/projects/winery.vercel.png";
 import IceTransWeb from "../assets/projects/icetrans.png";
 import MagicBoxWeb from "../assets/projects/magicbox.png";
@@ -87,7 +88,8 @@ const projects: Project[] = [
     id: 7,
     title: "Bonsai & Kokedama's Love",
     category: "JavaScript",
-    description: "Proyecto Final de la formación en desarrollo web en CoderHouse",
+    description:
+      "Proyecto Final de la formación en desarrollo web en CoderHouse",
     image: Bonsai,
     technologies: ["html5", "Css3", "Bootstrap"],
     github: "https://github.com/matiasbiasioli/Bonsai-Kokedama-s-Love",
@@ -107,7 +109,8 @@ const projects: Project[] = [
     id: 9,
     title: "Components Expo App",
     category: "React Native",
-    description: "Aplicación que explora los componentes de Expo para el desarrollo mobile",
+    description:
+      "Aplicación que explora los componentes de Expo para el desarrollo mobile",
     image: ComponentsApp,
     technologies: ["React Native", "Expo"],
     github: "",
@@ -116,6 +119,7 @@ const projects: Project[] = [
 ];
 
 export default function Portfolio() {
+  const { t } = useLanguage();
   const [selected, setSelected] = useState<
     "All" | "JavaScript" | "React" | "React Native" | "WordPress"
   >("All");
@@ -129,12 +133,14 @@ export default function Portfolio() {
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
-          Algunos Proyectos
+          {t("portfolio.title")}
         </h2>
 
         {/* Filtros */}
         <div className="flex justify-center gap-4 mb-12">
-          {["All", "JavaScript", "React", "React Native", "WordPress"].map((cat) => (
+          {(
+            ["All", "JavaScript", "React", "React Native", "WordPress"] as const
+          ).map((cat) => (
             <button
               key={cat}
               onClick={() => setSelected(cat as any)}
@@ -144,7 +150,7 @@ export default function Portfolio() {
                   : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
               }`}
             >
-              {cat}
+              {t(`portfolio.filters.${cat}`)}
             </button>
           ))}
         </div>
@@ -176,7 +182,7 @@ export default function Portfolio() {
                     {project.title}
                   </h3>
                   <p className="text-gray-300 text-sm mt-2">
-                    {project.description}
+                    {t(`portfolio.projects.${project.id}.description`)}
                   </p>
 
                   {/* Tecnologías */}
@@ -200,14 +206,14 @@ export default function Portfolio() {
                       target="_blank"
                       className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
                     >
-                      <Github size={18} /> Código
+                      <Github size={18} /> {t("portfolio.code")}
                     </a>
                     <a
                       href={project.demo}
                       target="_blank"
                       className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
                     >
-                      <ExternalLink size={18} /> Demo
+                      <ExternalLink size={18} /> {t("portfolio.demo")}
                     </a>
                   </div>
                 </div>

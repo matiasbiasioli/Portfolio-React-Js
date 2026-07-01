@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MessageSquare, Check } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
@@ -61,7 +63,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Contactame
+          {t("contact.title")}
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -83,7 +85,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-4 border border-gray-500 rounded-md p-3">
               <MessageSquare size={24} />
-              <span>Siempre abierto a nuevos proyectos 🚀</span>
+              <span>{t("contact.availability")}</span>
             </div>
           </motion.div>
 
@@ -100,7 +102,7 @@ export default function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="Nombre"
+              placeholder={t("contact.form.name")}
               value={form.name}
               onChange={handleChange}
               required
@@ -109,7 +111,7 @@ export default function Contact() {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder={t("contact.form.email")}
               value={form.email}
               onChange={handleChange}
               required
@@ -117,7 +119,7 @@ export default function Contact() {
             />
             <textarea
               name="message"
-              placeholder="Mensaje"
+              placeholder={t("contact.form.message")}
               value={form.message}
               onChange={handleChange}
               required
@@ -137,7 +139,7 @@ export default function Contact() {
                   : "cursor-pointer bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 hover:bg-blue-700"
               }`}
             >
-              {status === "sending" ? "Enviando..." : "Enviar"}
+              {status === "sending" ? t("contact.form.sending") : t("contact.form.send")}
             </button>
 
             {/* Mensajes de estado */}
@@ -150,7 +152,7 @@ export default function Contact() {
                   className="absolute top-[-60px] right-1/2 translate-x-1/2 flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full shadow-md"
                 >
                   <Check size={20} />
-                  <span>¡Mensaje enviado!</span>
+                  <span>{t("contact.form.success")}</span>
                 </motion.div>
               )}
               {status === "error" && (
@@ -160,7 +162,7 @@ export default function Contact() {
                   exit={{ opacity: 0, y: -10, scale: 0.8 }}
                   className="absolute top-[-60px] right-1/2 translate-x-1/2 flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full shadow-md"
                 >
-                  <span>Error al enviar. Intenta de nuevo.</span>
+                  <span>{t("contact.form.error")}</span>
                 </motion.div>
               )}
             </AnimatePresence>

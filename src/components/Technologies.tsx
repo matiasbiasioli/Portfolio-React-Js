@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 import ReactIcon from "../assets/icons/react-original.svg";
 import ReactNativeIcon from "../assets/icons/react-original.svg";
@@ -45,7 +46,8 @@ const tecnologias: Tecnologia[] = [
 ];
 
 export default function Tecnologias() {
-  const [selected, setSelected] = useState<
+  const { t } = useLanguage();
+  const [selected, setSelected] = useState <
     "All" | "Frontend" | "Backend" | "Mobile" | "Design" | "Tools"
   >("All");
 
@@ -58,12 +60,12 @@ export default function Tecnologias() {
     <section id="technologies" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
-          Tecnologías que utilizo
+          {t("technologies.title")}
         </h2>
 
         {/* Filtros */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {["All", "Frontend", "Backend", "Mobile", "Design", "Tools"].map(
+          {(["All", "Frontend", "Backend", "Mobile", "Design", "Tools"] as const).map(
             (cat) => (
               <button
                 key={cat}
@@ -74,7 +76,7 @@ export default function Tecnologias() {
                     : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
                 }`}
               >
-                {cat}
+                {t(`technologies.filters.${cat}`)}
               </button>
             )
           )}

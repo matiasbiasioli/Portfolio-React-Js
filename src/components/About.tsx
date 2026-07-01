@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 // import profileImg from "../assets/projects/perfil-celest.png";
 import profileImg2 from "../assets/projects/cv-b y n.jpg";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-20 text-white">
-      <div id="container" className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-amber-200 dark:bg-gray-800 border-1 border-cyan-200 px-20 py-20 rounded-lg">
+      <div
+        id="container"
+        className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-amber-200 dark:bg-gray-800 border-1 border-cyan-200 px-20 py-20 rounded-lg"
+      >
         {/* Avatar a la izquierda */}
         <motion.img
           src={profileImg2}
@@ -32,7 +38,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Sobre mí
+            {t("about.title")}
           </motion.h2>
 
           <motion.p
@@ -41,20 +47,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Me especializo en construir aplicaciones web modernas y responsive
-            usando <span className="font-semibold text-cyan-400">React</span>.
-            <br />
-            Me enfoco en crear aplicaciones de una sola página (SPA) dinámicas y
-            escalables con código limpio y organizado. Actualmente estoy
-            profundizando mis conocimientos en{" "}
-            <span className="font-semibold text-cyan-400">
-              React Native
-            </span>{" "}
-            para el desarrollo de aplicaciones móviles multiplataforma. Mi
-            experiencia también incluye el diseño y mantenimiento de tiendas
-            digitales en WordPress con Elementor y WooCommerce. Soy una persona
-            organizada y detallista, y me comprometo a entregar trabajos en
-            tiempos pactados.
+            {t("about.description")}
           </motion.p>
 
           {/* Botones */}
@@ -70,7 +63,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="px-5 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg shadow-md hover:shadow-cyan-400/50 transition"
             >
-              Ver CV
+              {t("about.cv")}
             </a>
             <a
               href="https://www.linkedin.com/in/mat%C3%ADas-biasioli/"
@@ -78,7 +71,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="px-5 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition"
             >
-              LinkedIn
+              {t("about.linkedin")}
             </a>
           </motion.div>
         </motion.div>

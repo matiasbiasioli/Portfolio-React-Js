@@ -2,11 +2,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import useTheme from "../hooks/useTheme";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-
+  const { language, toggleLanguage, t } = useLanguage();
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -29,11 +30,11 @@ export default function Navbar() {
         {/* Links desktop */}
         <div className="hidden md:flex space-x-6 items-center">
           {[
-            { href: "#hero", label: "Home" },
-            { href: "#about", label: "About me" },
-            { href: "#technologies", label: "Technologies" },
-            { href: "#portfolio", label: "Portfolio" },
-            { href: "#contact", label: "Contact" },
+            { href: "#hero", label: t("nav.home") },
+            { href: "#about", label: t("nav.about") },
+            { href: "#technologies", label: t("nav.technologies") },
+            { href: "#portfolio", label: t("nav.portfolio") },
+            { href: "#contact", label: t("nav.contact") },
           ].map((link) => (
             <a
               key={link.href}
@@ -43,6 +44,14 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* Botón de idioma */}
+          <button
+            onClick={toggleLanguage}
+            className="px-3 py-1.5 rounded-full border border-gray-500 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:scale-105 transition cursor-pointer"
+          >
+            {language === "es" ? "EN" : "ES"}
+          </button>
 
           {/* Botón de toggle */}
           <button
@@ -59,6 +68,12 @@ export default function Navbar() {
 
         {/* Botón hamburguesa mobile */}
         <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleLanguage}
+            className="px-2.5 py-1 rounded-full border border-gray-500/30 text-xs font-semibold text-gray-800 dark:text-gray-200"
+          >
+            {language === "es" ? "EN" : "ES"}
+          </button>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full border border-gray-500/30"
@@ -87,11 +102,11 @@ export default function Navbar() {
           >
             <div className="flex flex-col space-y-4 px-6 py-6">
               {[
-                { href: "#hero", label: "Home" },
-                { href: "#about", label: "About me" },
-                { href: "#technologies", label: "Technologies" },
-                { href: "#portfolio", label: "Portfolio" },
-                { href: "#contact", label: "Contact" },
+                { href: "#hero", label: t("nav.home") },
+                { href: "#about", label: t("nav.about") },
+                { href: "#technologies", label: t("nav.technologies") },
+                { href: "#portfolio", label: t("nav.portfolio") },
+                { href: "#contact", label: t("nav.contact") },
               ].map((link) => (
                 <a
                   key={link.href}
