@@ -200,14 +200,14 @@ export default function Portfolio() {
                     <a
                       href={project.github}
                       target="_blank"
-                      className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
+                      className="flex items-center gap-1 text-slate-600 dark:text-gray-300 hover:text-blue-400 transition"
                     >
                       <Github size={18} /> {t("portfolio.code")}
                     </a>
                     <a
                       href={project.demo}
                       target="_blank"
-                      className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
+                      className="flex items-center gap-1 text-slate-600 dark:text-gray-300 hover:text-blue-400 transition"
                     >
                       <ExternalLink size={18} /> {t("portfolio.demo")}
                     </a>

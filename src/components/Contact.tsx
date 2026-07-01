@@ -93,7 +93,7 @@ export default function Contact() {
           <motion.form
             onSubmit={handleSubmit}
             id="container"
-            className="flex flex-col gap-4 bg-gray-800 text-white p-6 rounded-xl shadow-lg relative"
+            className="flex flex-col gap-4 bg-white dark:bg-gray-800 text-slate-900 dark:text-white shadow-sm p-6 rounded-xl border border-slate-200 dark:border-transparent relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
