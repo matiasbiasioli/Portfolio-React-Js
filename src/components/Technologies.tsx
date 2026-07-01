@@ -73,7 +73,7 @@ export default function Tecnologias() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
                   selected === cat
                     ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50"
-                    : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
+                    : "bg-slate-100 text-slate-600 hover:bg-blue-500 hover:text-white dark:bg-gray-800 dark:text-gray-300"
                 }`}
               >
                 {t(`technologies.filters.${cat}`)}
@@ -86,7 +86,7 @@ export default function Tecnologias() {
         <motion.div
           layout
           id="container"
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center bg-gray-800 rounded-2xl p-10 border border-cyan-200"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center bg-white dark:bg-gray-800 shadow-sm rounded-2xl p-10 border border-cyan-200 dark:border-cyan-200/20"
         >
           <AnimatePresence>
             {filtered.map((tech) => (
@@ -98,7 +98,7 @@ export default function Tecnologias() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 className="relative group flex flex-col items-center p-4 rounded-xl
-                           bg-gray-800/40 backdrop-blur-md border border-gray-700/50
+                           bg-slate-50 dark:bg-gray-800/40 backdrop-blur-md border border-slate-200 dark:border-gray-700/50
                            transition-all duration-300 cursor-pointer
                            hover:bg-blue-600/20 hover:border-blue-400 hover:scale-105 hover:shadow-[0_0_20px_rgba(56,189,248,0.6)]"
               >
@@ -106,7 +106,7 @@ export default function Tecnologias() {
                 <img src={tech.logo} alt={tech.name} className="w-16 h-16" />
 
                 {/* Nombre */}
-                <p className="mt-3 text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">
+                <p className="mt-3 text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-blue-400 transition-colors">
                   {tech.name}
                 </p>
               </motion.div>

@@ -7,11 +7,8 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 text-white">
-      <div
-        id="container"
-        className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-amber-200 dark:bg-gray-800 border-1 border-cyan-200 px-20 py-20 rounded-lg"
-      >
+    <section id="about" className="py-20 text-slate-900 dark:text-white">
+      <div id="container" className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-white dark:bg-gray-800 shadow-sm border border-cyan-200 dark:border-cyan-200/20 px-20 py-20 rounded-lg">
         {/* Avatar a la izquierda */}
         <motion.img
           src={profileImg2}
@@ -42,7 +39,7 @@ export default function About() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-300 leading-relaxed"
+            className="text-lg text-slate-600 dark:text-gray-300 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

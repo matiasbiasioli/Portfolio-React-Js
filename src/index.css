@@ -18,13 +18,10 @@ body {
   color:#0f172a; 
 }
 .light a:hover {
-  color: cyan 
+  color: #0891b2;
 }
 .light p {
   color:#0f172a 
-}
-.light #container {
-  background-color: #979ea9;
 }
 
 /* Estilo cuando está activa la clase 'dark' en <html> */

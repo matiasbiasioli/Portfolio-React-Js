@@ -27,7 +27,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-lg md:text-2xl max-w-xl text-center text-gray-300 mb-10"
+        className="text-lg md:text-2xl max-w-xl text-center text-slate-600 dark:text-gray-300 mb-10"
       >
         {t("hero.subtitle_pre")}{" "}
         <span className="font-semibold text-cyan-300">React</span>{" "}

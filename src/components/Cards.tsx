@@ -147,7 +147,7 @@ export default function Portfolio() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
                 selected === cat
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50"
-                  : "bg-gray-800 text-gray-300 hover:bg-blue-500 hover:text-white"
+                  : "bg-slate-100 text-slate-600 hover:bg-blue-500 hover:text-white dark:bg-gray-800 dark:text-gray-300"
               }`}
             >
               {t(`portfolio.filters.${cat}`)}
@@ -166,11 +166,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="rounded-2xl overflow-hidden 
-                           bg-gray-800/40 border border-gray-700/50 
-                           backdrop-blur-md shadow-lg 
-                           hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] 
-                           transition duration-300"
+                className="bg-white dark:bg-gray-800 shadow-sm border border-slate-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
               >
                 <img
                   src={project.image}
@@ -178,10 +174,10 @@ export default function Portfolio() {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-sm mt-2">
+                  <p className="text-slate-600 dark:text-gray-300 text-sm mt-2">
                     {t(`portfolio.projects.${project.id}.description`)}
                   </p>
 
